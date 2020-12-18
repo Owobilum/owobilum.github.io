@@ -1,9 +1,12 @@
 *{
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     color: rgb(50, 50, 50);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:  Helvetica,Arial, sans-serif;
 }
 .img{
     max-width: 100%;
@@ -13,21 +16,24 @@ button:hover{
 }
 
 /*Nav*/
-.nav-btn{
-    /*color: #16e0bd;*/ 
-    color: #73C2FB;
-    font-size: 20px;
-    background-color: inherit;
-    border: solid #73C2FB;
-    margin-top: .5em;
+.nav-open .nav{
+    transform: translateX(0);
 }
-#close-menu{
-    margin-left: .5em;
+.nav-open .nav-toggler{
+    position: fixed;
 }
-nav{
-    position: relative;
+.nav-open .hamburger{
+    transition-property: transform;
+    transition-duration: .25s;
+    transform: rotate(45deg);
 }
-.full-nav{
+.nav-open .hamburger::before{
+    opacity: 0;
+}
+.nav-open .hamburger::after{
+    transform: rotate(90deg) translate(6px);
+}
+.nav{
     position: fixed;
     z-index: 100;
     top: 0;
@@ -36,8 +42,51 @@ nav{
     right:0;
     background-color:rgb(50,50,50);
     opacity: 1;
-    display: none; 
+    transform: translateX(100%);
+    transition-property: transform;
+    transition-duration: .25s;
 }
+.nav-toggler{
+    border: 0;
+    outline: none;
+    background-color:transparent;
+    padding: .5em;
+    position: absolute;
+    top:2em;
+    right: 2em;
+    z-index: 1000;
+}
+
+.hamburger{
+    display: block;
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    position: relative;
+    background-color:#73C2FB;
+    transition-property: transform;
+    transition-duration: .25s;
+}
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position:absolute;
+    left:0;
+    right:0;
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    background-color:#73C2FB;
+}
+.hamburger::before{
+    top: 6px;
+}
+.hamburger::after{
+    bottom: 6px;
+}
+
+
+
 ul.menu{
     list-style: none;
     padding-top: 3.5em;
@@ -67,8 +116,13 @@ h1.intro{
     font-weight: 200;    
 }
 span.intro{
-    font-size: 1em;
+    font-size: .5em;
     font-weight: 900;
+    animation: name 1.5s ease-out 0s 1 alternate forwards;
+}
+@keyframes name{
+    0%{font-size: 0.1em;}
+    100%{font-size: .7em;}
 } 
 p.intro{
     font-size: 1.5em;
@@ -89,8 +143,22 @@ section.my-services{
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: rgb(50, 50, 50);
-    color: rgb(255,255,255)
+    background-color:rgb(50,50,50);
+    color: rgb(255,255,255);
+    opacity: 1;
+}
+.in-view h2.my-services{
+    animation: service 2s ease-in 0s 1 alternate forwards;
+}
+.in-view .service{
+    animation: service 2s ease-in 0.5s 1 alternate forwards;
+}
+.in-view button.my-services{
+    animation: service 2s ease-in 1s 1 alternate forwards;
+}
+@keyframes service{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
 .services{
     display: flex;
@@ -99,7 +167,11 @@ section.my-services{
     margin: 0 auto;
     width: 80%;
     height: max-content;
-    text-align: center;
+    text-align: start;
+}
+.service-content{
+    text-align: left;
+    padding: 5px 10px;
 }
 div.third-service{
     margin-bottom: 100px;
@@ -114,6 +186,8 @@ h2.my-services{
 }
 h3.service{
     font-size: 1em;
+    text-align: left;
+    padding: 5px 10px;
 }
 button.my-services{
     height: 40px;
@@ -143,6 +217,13 @@ p.subtitle{
 }
 p.content{
     font-size: 1em;
+}
+.seven-in-view .box-seven {
+    animation: box-seven 1.5s ease-in 0s 1 alternate forwards;
+}
+@keyframes box-seven {
+    0%{transform: rotate(45deg);}
+    100%{transform: rotate(0deg);}
 }
 img.box-seven{
     max-width: 100%;
@@ -179,6 +260,7 @@ h3.my-work{
 }
 img.portfolio-img{
     max-width: 100%;
+    height: 100%;
     transition-property: transform;
     transition-duration: .5s;       
 }
@@ -187,6 +269,7 @@ img.portfolio-img:hover{
     opacity: .5;   
 }
 .pfl-div{
+    max-height: 250px;
     overflow: hidden;
 }
 /*Footer*/
@@ -214,7 +297,7 @@ a.footer-item{
     text-decoration: none;
     color: #73C2FB;
 }
-/*Media Query One*/
+/*Tablet Media Query*/
 @media (min-width: 600px) {
     /*Nav*/
     .nav-btn{
@@ -298,13 +381,15 @@ a.footer-item{
         grid-row:1/4 ;
         width: min-content;
         position: relative;
-        z-index: 5;    
+        z-index: 5;
     }
+
     img.box-seven{
         max-width: 230px;
         min-width: 180px;
         box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
-        0.125em 0.125em 0.25em rgba(0,0,0,.15);    
+        0.125em 0.125em 0.25em rgba(0,0,0,.15); 
+       
     }
     h2.about-me{
         font-size: 4em;
@@ -324,7 +409,7 @@ a.footer-item{
         font-size: 1.2em;
     }
 }
-/*Media Query Two*/
+/*Laptop Media Query*/
 @media (min-width: 800px) {
     /* INTRO*/
     h1.intro{

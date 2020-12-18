@@ -6,25 +6,22 @@
         <title>Lawrence's Portfolio Website</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="" />
-	    <meta name="robots" content="noindex" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />  
         <meta http-equiv="author" content="O.L. Ikpebe" />
     </head>
     <body>
         <header>
-            <nav>
-                <div class="btn-wrapper">
-                    <button class="nav-btn" id="burger-menu">&#9776;</button>
-                </div>   
-                <div class="full-nav" id="nav-page">
-                    <button class="nav-btn" id="close-menu">X</button>                     
+            <button class="nav-toggler" id="toggler">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav" id="nav-page">          
                     <ul class="menu">
                         <li class="menu-item"><a href="#" class="menu-item-link" id="first-item">Home</a></li>
                         <li class="menu-item"><a href="#my-services" class="menu-item-link">My Services</a></li>
                         <li class="menu-item"><a href="#about-me" class="menu-item-link">About Me</a></li>
                         <li class="menu-item"><a href="#my-work" class="menu-item-link">My Work</a></li>
                     </ul>
-                </div>
+              
             </nav>
         </header>
 
@@ -42,25 +39,25 @@
             <h2 class="my-services">What I do</h2>
             <div class="services"> 
                 <div class="service">
-                    <h3  class="service"> Front-end Development</h3>
+                    <h3  class="service">Front-end Development</h3>
                     <p class="service-content">
-                        I build front-ends using industry standards in user interface design,
-                        while incorporating user experience features.
+                        I build front-end applications, Wordpress sites, E-commerce 
+                        shops, business websites,
+                        personal blogs etc. 
                     </p>
                 </div>
                 <div class="service">
                     <h3 class="service"> SEO and Analytics</h3>
                     <p class="service-content">
                         I can identify SEO KPIs,carry out keyword research, and also plan, develop
-                        and implement your SEO strategy. I'll monitor KPIs in analytics data and present
+                        and implement SEO strategies. I'll monitor KPIs in analytics data and present
                         clear and insightful reports.
                     </p>
                 </div>
                 <div class="service third-service">
-                    <h3 class="service">Digital Marketing</h3>
+                    <h3 class="service">Photoshop</h3>
                     <p class="service-content">
-                        I implement and manage pay-per-click marketing campaigns and I also  create both text and graphic-based
-                        advert material for websites and social media accounts.
+                        I design posters, website graphics, infographs, mockups etc.
                     </p>
                 </div>
             </div> 
@@ -77,14 +74,13 @@
             </div>
             <div class="box-six">
                 <p class="about-me content">
-                    My name is Lawrence Owobilum Ikpebe, because as you might know, syllables
-                    are free.I hold a degree in Telecommunications Engineering. 
-                    I took up Front-end Development 3 years ago and have loved it ever since. I now have
-                    a high level of knowledge and experience in HTML5, CSS3, JavaScript and Wordpress. I also have
+                    I'm a Telecommunications Engineering graduate from F.U.T Minna.
+                    I took up Front-end Development 3 years ago and have loved it ever since. I have
+                    a high skill level in HTML5, CSS3, JavaScript, React,
+                    Bootstrap,Material UI, SASS, ES6, jQuery, Ajax and Wordpress. I also have
                     a working knowledge of PHP and SQL.
-                    I am a Google Certified Digital Marketer and I also hold a Google Analytics Individual Qualification. I am a results oriented person and
-                    I find it easy to work on my own or as part of a team. I <del>like</del> 
-                    love good music and I like to keep fit. For me, jogging with headphones on and music blasting is bliss.
+                    I am a Google Certified Digital Marketer and I also hold a Google Analytics Individual Qualification.
+                    When I'm off the clock, I like to read crime thrillers or go running.
                 </p>
             </div>
             <div class="box-seven">
@@ -97,27 +93,23 @@
             <h3 class="my-work">A Selection of my range of work</h3>
             <div class="portfolio">
                 <div class="ten pfl-div">
-                    <!-- Portfolio item 01 -->
-                    <a href="portfolio-item.html" class="portfolio-item">
-                        <img src="img/cakesandchops.jpg" alt="" class="portfolio-img">
+                    <a href="https://towncrier.netlify.app" target="_blank" class="portfolio-item">
+                        <img src="img/news.jpg" alt="" class="portfolio-img">
                     </a> 
                 </div>
                 <div class="eleven pfl-div">
-                    <!-- Portfolio item 02 -->
-                    <a href="portfolio-item.html" class="portfolio-item">
-                        <img src="img/portfolio-022.png" alt="" class="portfolio-img">
+                    <a href="https://dripclean.000webhostapp.com/" target="_blank" class="portfolio-item">
+                        <img src="img/laundry.jpg" alt="" class="portfolio-img">
                     </a> 
                 </div>
                 <div class="twelve pfl-div">
-                    <!-- Portfolio item 03 -->
-                    <a href="portfolio-item.html" class="portfolio-item">
-                        <img src="img/portfolio-022.png" alt="" class="portfolio-img">
+                    <a href="https://toptrivia.netlify.app" target="_blank" class="portfolio-item">
+                        <img src="img/trivia.jpg" alt="" class="portfolio-img">
                     </a> 
                </div>
                <div class="thirteen pfl-div">
-                    <!-- Portfolio item 03 -->
-                    <a href="portfolio-item.html" class="portfolio-item">
-                        <img src="img/portfolio-022.png" alt="" class="portfolio-img">
+                    <a href="https://naijacovidtracker.netlify.app" target="_blank" class="portfolio-item">
+                        <img src="img/covid_tracker.jpg" alt="" class="portfolio-img">
                     </a> 
                 </div>
             </div>    
@@ -127,22 +119,20 @@
             <a href="mailto:lawrenceikpebe@gmail.com" class="footer-email">lawrenceikpebe@gmail.com</a>
             <ul class="footer">
                 <li class="footer-item">
-                    <a class="footer-item" href="#">
+                    <a class="footer-item" href="https://github.com/Owobilum">
+                         <i class="fab fa-github"></i>
+                    </a> 
+                </li>
+                <li class="footer-item">
+                    <a class="footer-item" href="https://codepen.io/owobilum">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a class="footer-item" href="https://twitter.com/IkpebeL">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>
-                <li class="footer-item">
-                   <a class="footer-item" href="#">
-                        <i class="fab fa-github"></i>
-                   </a> 
-                </li>
-                <li class="footer-item">
-                    <a class="footer-item" href="#">
-                        <i class="fab fa-codepen"></i>
-                    </a>
-                    
-                </li>
-
             </ul>
         </footer>
         <script src="js/index.js"></script>

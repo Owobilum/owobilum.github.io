@@ -1,18 +1,40 @@
-function openMenu() {
-    document.getElementById('nav-page').style.display="block";
-}
-var el=document.getElementById('burger-menu');
-el.addEventListener('click',openMenu);
+document.getElementById('toggler').addEventListener('click',()=>{
+    document.querySelector('header').classList.toggle('nav-open')
+})
 
-function closeMenu(){
-    document.getElementById('nav-page').style.display="none";
-}
-var ko=document.getElementById('close-menu');
-ko.addEventListener('click',closeMenu);
+document.querySelectorAll('.menu-item-link').forEach(link=>{
+    link.addEventListener('click',()=>{
+        document.querySelector('header').classList.toggle('nav-open')
+    })
+})
+let bodyRect = document.documentElement.getBoundingClientRect(),
+    myServices = document.getElementById('my-services').getBoundingClientRect(),
+    myServicesOffset   = myServices.top - bodyRect.top;
 
-var hi=document.getElementsByClassName('menu')[0];
-hi.addEventListener('click',closeMenu);
+bodyRect,
+aboutMe = document.getElementById('about-me').getBoundingClientRect(),
+aboutMeOffset = aboutMe.top - bodyRect.top;
 
+document.querySelectorAll('.service').forEach(service=>{
+        service.style.opacity=0;   
+})
+document.querySelectorAll('h2.my-services,button.my-services').forEach(service=>{
+    service.style.opacity=0;   
+})
+document.querySelector('.box-seven').style.transform='rotate(90deg)'
 
+window.addEventListener('scroll',()=>{
+    let scrollPosition=document.documentElement.scrollTop
+    if(myServicesOffset-scrollPosition<400){
+        if(!document.documentElement.classList.contains('in-view')){
+            document.documentElement.classList.add('in-view')
+        }   
+    }
+    if(aboutMeOffset-scrollPosition<400){
+        if(!document.documentElement.classList.contains('seven-in-view')){
+            document.documentElement.classList.add('seven-in-view')
+        }
+    }    
+})
 
 
