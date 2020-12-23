@@ -187,7 +187,8 @@ h2.my-services{
 h3.service{
     font-size: 1em;
     text-align: left;
-    padding: 5px 10px;
+    padding: 5px 5px;
+    
 }
 button.my-services{
     height: 40px;
@@ -253,7 +254,7 @@ h3.my-work{
 .portfolio{
     margin: 0 auto; 
     max-width: 800px;
-    background-color:  #73C2FB;
+    background: transparent;
     display: grid;
     grid-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
